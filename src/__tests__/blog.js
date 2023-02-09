@@ -1,7 +1,7 @@
 import request from "supertest";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import app from "../index";
+import app from "../app.js";
 import {expect, jest, test} from '@jest/globals';
 dotenv.config({ path: "../.env" });
 /* Connecting to the database before each test. */
@@ -46,7 +46,7 @@ describe("blog tests", () => {
     it('should respond with a 200 status code', async () => {
       const response = await request(app).patch("/api/v1/blogs/63c79a9151a613066c95744c")
       .send(blogData)
-      .set("Authorization",'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzc5YzIzOTI3OThlMGEyN2M3NmE0YSIsImlhdCI6MTY3NDAyNjAyMywiZXhwIjoxNjgxODAyMDIzfQ.ppRQTBMG3U6gNudviKJSGieDQLwexa8nvUA5Jmrwprg')
+      .set("Authorization",'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJKb2FuX0xvdWppIiwic3ViIjoiNjNlMzgzNDEzODg0MzVlODNmNWMzMWFmIiwiaWF0IjoxNjc1ODYyOTg5NjU2LCJleHAiOjE2NzU5NDkzODk2NTZ9.C0YarY0K366QgLraoiswgY4IN8Zw4RDEBhoB5Mn4YQg')
       expect(response.statusCode).toBe(200)
       
     })
@@ -54,7 +54,7 @@ describe("blog tests", () => {
   describe("DELETE /api/v1/blogs/:id", () => {
     it("should respond with a 200 status code", async () => {
       const response = await request(app).delete("/api/v1/blogs/63bea167706be404409ed3ea")
-      .set("Authorization",'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzc5YzIzOTI3OThlMGEyN2M3NmE0YSIsImlhdCI6MTY3NDAyNjAyMywiZXhwIjoxNjgxODAyMDIzfQ.ppRQTBMG3U6gNudviKJSGieDQLwexa8nvUA5Jmrwprg')
+      .set("Authorization",'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJKb2FuX0xvdWppIiwic3ViIjoiNjNlMzgzNDEzODg0MzVlODNmNWMzMWFmIiwiaWF0IjoxNjc1ODYyOTg5NjU2LCJleHAiOjE2NzU5NDkzODk2NTZ9.C0YarY0K366QgLraoiswgY4IN8Zw4RDEBhoB5Mn4YQg')
       expect(response.statusCode).toBe(200);
     })
   })

@@ -11,7 +11,7 @@ const routes = express.Router();
 routes.use("/blogs", blogsRoutes)
 routes.use("/comments", commentsRoutes)
 routes.use("/likes", LikesRoutes)
-routes.use("/users", UserRoutes)
+routes.use("/auth", UserRoutes)
 routes.use("/messages", MessageRoutes)
 
 

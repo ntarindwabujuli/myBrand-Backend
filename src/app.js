@@ -49,3 +49,5 @@ try {
     console.log(e)
 }
 mongoose.set('strictQuery',true);
+
+export default app
