@@ -48,3 +48,6 @@ try {
 }catch (e) {
     console.log(e)
 }
+mongoose.set('strictQuery',true);
+
+export default app
