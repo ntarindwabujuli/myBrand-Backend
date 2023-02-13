@@ -18,7 +18,7 @@ export class BlogController {
             const {title, category, description} = req.body;
             const imageUrl = await cloudinari.uploadPhoto(req,res,req.files.image);
             if(imageUrl === null ) 
-            {throw "Error uploading image to cloudinari server"}
+            {throw "Error uploading image to cloudinary server"}
             // console.log("image url ----", imageUrl);
             const post = {
                 title,
